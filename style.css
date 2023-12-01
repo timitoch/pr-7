@@ -1,0 +1,101 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+input {
+  width: 70%; 
+  padding: 10px; 
+  border: 2px solid #7f92b1; 
+  border-radius: 10px; 
+  font-size: 16px; 
+  margin-bottom: 10px;
+}
+button {
+  background-color: #84bfff; 
+  border: none;
+  border-radius: 10px; /* Закруглені краї */
+  padding: 10px 40px; /* Більший розмір */
+  transition: background-color 1s;
+}
+button:hover{
+  transform: scale(1, 1) ;
+  background-color: rgb(255, 187, 238);
+}
+@keyframes rotateAndPulse {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+#form, #sphere, #sphere:before,#sphere:after {
+  margin: 20px;
+}
+
+#sphere {
+  box-shadow: 0 0 25px #9da7b3;
+  animation: rotateAndPulse 15s ease-in-out infinite;
+  width: 500px;
+  height: 500px;
+  border-radius: 40%;
+  background: linear-gradient(#e1fff6, #7cade6, #a087c8);
+  position: relative;
+}
+#sphere:before {
+  box-shadow: 0 0 20px #7271ab inset;
+  animation: rotateAndPulse 10s ease-in-out infinite reverse;
+  content: '';
+  position: absolute;
+  top: 48%;
+  left: 63%;
+  width: 75%;
+  height: 75%;
+  background: conic-gradient(#e7ade3, #99c7ff,#defff7, #e7ade3);
+  border-radius: 40%;
+  transform: translate(-50%, -50%);
+}
+#sphere:after {
+  box-shadow: 0 0 20px #7183ab inset;
+  animation: rotateAndPulse 10s ease-in-out infinite;
+  content: '';
+  position: absolute;
+  top: 48%;
+  left: 63%;
+  width: 45%;
+  height: 45%;
+  background: linear-gradient(#dcffe9, #adcde6);
+  border-radius: 45%;
+  transform: translate(-50%, -50%);
+}
+#answer {
+  z-index: 1;
+  position: absolute;
+  top: 48%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 10px;
+  text-shadow: 2px 2px 4px #649b99;
+}
+@keyframes gradient {
+  0% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+  100% { background-position: 0% 100%; }
+}
+h1 {
+  background: linear-gradient(90deg, #000000, #4e6e96, #8f568b, #000000);
+  background-size: 500% 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 10s linear infinite;
+}
+#sphere:before, #sphere:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
